@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/home.css" />
+    <link rel="stylesheet" href="./styles/quizz.css" />
+    <link rel="stylesheet" href="./styles/addQuiz.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="shortcut icon" href="./assets/buzzquizz.png" type="image/x-icon" />
+    <title>BuzzQuizz</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>BuzzQuizz</h1>
+    </header>
+    <main>
+      <aside data-test="spinner" class="loading-screen hidden"><img src="assets/BoilingTenderAruanas-max-1mb.gif"></aside>
+      
+      <section class="home-page">
+        <article class="user-quizz">
+          <h3>Você não criou nenhum quizz ainda :(</h3>
+          <div class="add-quizz"></div>
+          <button data-test="create-btn" type="button" class="noUserQuizz" onclick="addQuizz()">
+            <p>Criar Quizz</p>
+          </button>
+          <button data-test="create-btn" type="button" class=" hidden withUserQuizz " onclick="addQuizz()">
+            <ion-icon name="add-circle"></ion-icon>
+          </button>
+          
+        </article>
+
+        <div class="all-quizz-title">
+          <h2>Todos os Quizzes</h2>
+        </div>
+
+        <article class="all-quizz"></article>
+      </section>
+
+      <section class="quizz-page hidden">
+        <div class="quizz-header" data-test="banner"></div>
+        <div class="quizz-body"></div>
+        <div class="quizz-result hidden">
+
+        </div>
+        <div class="quizz-exit">
+          <button id="reset-button" onclick="getQuizz(chosenQuizzId)" data-test="restart">Reiniciar Quizz</button>
+          <button id="home-button" onclick="hideQuizzPage()" data-test="go-home">Voltar para home</button>
+        </div>
+      </section>
+
+      <section class="addQuizz hidden">
+        <div class="titleQuizz">
+          <section></section>
+          <h2>Comece pelo começo</h2>
+          <ul class="inputs">
+            <li><input data-test="title-input" class="quizzTitle" type="text" placeholder="Título do seu quizz" /></li>
+            <li><input data-test="img-input" class="quizzImg" type="text" placeholder="URL da imagem do seu quizz" /></li>
+            <li><input data-test="questions-amount-input" class="nquestions" type="text" placeholder="Quantidade de perguntas do quizz" /></li>
+            <li><input data-test="levels-amount-input" class="nlevels" type="text" placeholder="Quantidade de níveis do quizz" /></li>
+          </ul>
+          <button data-test="go-create-questions" class="submitButton" type="submit" onclick="toQuestions()">Prosseguir pra criar perguntas</button>
+        </div>
+
+        <div class="questionsQuizz hidden">
+          <h2>Crie suas perguntas</h2>
+          <article class="questions"></article>
+          <button data-test="go-create-levels" class="submitButton" type="submit" onclick="toLevels()">Prosseguir pra criar níveis</button>
+        </div>
+
+        <div class="levelQuizz hidden">
+          Agora, decida os niveis
+          <article class="levels"></article>
+          <button data-test="finish" class="submitButton" type="submit" onclick="toSend()">Finalizar Quizz</button>
+        </div>
+
+      <div class="sendQuizz hidden">
+        <h2>Seu quizz está pronto!</h2>
+        <div class="userSendQuizz"></div>
+        <button data-test="go-quiz" class="submitButton" type="submit" onclick="toQuizz()">Acessar Quizz</button>
+        <button data-test="go-home" class="toHome" type="button" onclick="toHome()">Voltar para home</button>
+      </div>
+
+    </section>
+
+  </main>
+  
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="./scripts/script.js"></script>
+  </body>
+</html>

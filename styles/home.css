@@ -1,0 +1,244 @@
+* {
+  box-sizing: border-box;
+  scroll-margin-top: 100px;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+  background-color: #fafafa;
+}
+
+header {
+  width: 100%;
+  height: 70px;
+  background: #ec362d;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  position: fixed;
+  top: 0px;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header h1 {
+  font-weight: 700;
+  font-size: 37px;
+  line-height: 43px;
+  color: #ffffff;
+}
+
+.loading-screen {
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  background-color: #fafafa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 4;
+}
+
+.loading-screen img {
+  height: 300px;
+}
+
+.home-page {
+  height: 100%;
+  width: 100%;
+  padding-inline: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fafafa;
+  position: relative;
+  z-index: 1;
+}
+
+.user-quizz {
+  height: 181px;
+  max-width: 1051px;
+  width: 100%;
+  margin-top: 146px;
+  margin-bottom: 77px;
+  border: 1px dashed #d5d5d5;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.user-quizz h3 {
+  margin-inline: 15px;
+  margin-bottom: 25px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  align-items: center;
+  text-align: center;
+  color: #b9b9b9;
+}
+
+.user-quizz-Used {
+  max-width: 1051px;
+  width: 100%;
+  margin-top: 146px;
+  margin-bottom: 77px;
+  border-radius: 5px;
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  position: relative;
+}
+
+.user-quizz-Used h3 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  color: #000000;
+}
+
+
+.edit{
+  width: 45px;
+  height: 45px;
+  background-color: #ec362d;
+  position: absolute;
+  right: 0px;
+  top: 10px;
+  border: none;
+  border-radius: 15px 0px 0px 0px;
+}
+
+.delete{
+  width: 45px;
+  height: 45px;
+  background-color: #ec362d;
+  position: absolute;
+  right: 0px;
+  top: 55px;
+  border: none;
+  border-radius: 0px 0px 0px 15px;
+  z-index: 2;
+}
+
+button.noUserQuizz {
+  width: 151px;
+  height: 40px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 25px;
+  border: 1px dashed #ec362d;
+  border-radius: 50px;
+  color: #ec362d;
+  background-color: #fafafa;
+  position: absolute;
+  bottom: 15px;
+}
+
+button.withUserQuizz {
+  width: 30px;
+  height: 30px;
+  border:none;
+  padding: 0px;
+  color: #ec362d;
+  background-color: none;
+  border-radius: 100%;
+  position: absolute;
+  left: 130px;
+  top: -5px;
+}
+button.withUserQuizz ion-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.all-quizz-title {
+  height: 23px;
+  max-width: 1051px;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.all-quizz-title h2 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  color: #000000;
+}
+
+.all-quizz {
+  height: 374px;
+  max-width: 1051px;
+  width: 100%;
+  gap: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-quizz{
+  width: 100%;
+  gap: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: center;
+}
+
+.quizz-container {
+  width: 340px;
+  height: 181px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.all-quizz img,
+.add-quizz img {
+  height: 181px;
+  width: 340px;
+  border-radius: 5px;
+  object-fit: cover;
+  position: absolute;
+  z-index: -1;
+}
+
+.all-quizz h3,
+.add-quizz h3 {
+  max-width: 301px;
+  padding-top: 100px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 22px;
+  color: #ffffff;
+  position: relative;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 1100px) {
+  .add-quizz{
+    justify-content: center;
+  align-items: center;
+  }
+}
